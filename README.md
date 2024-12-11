@@ -1,2 +1,2 @@
 # mind_games
-playig games with your mind
+playing games with your mind
