@@ -12,6 +12,8 @@ public class Frame extends JFrame {
         
 
 		Canvas d = new Canvas();
+		Blackboard.getInstance().addPropertyChangeListener(d);
+
 		this.add(d);
         this.addKeyListener(d);
 

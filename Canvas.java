@@ -1,8 +1,10 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Canvas extends JPanel implements KeyListener, PropertyChangeListener {
+public class Canvas extends JPanel implements KeyListener, PropertyChangeListener, ActionListener {
 
     Player player;
     List<Platform> platforms;
@@ -46,7 +48,7 @@ public class Canvas extends JPanel implements KeyListener, PropertyChangeListene
             }
             g.setColor(Color.WHITE);
 
-            getJumpStrength();
+//            getJumpStrength();
             player.drawArrow(g, (long) (this.jumpStrength * 3000));
 
 
@@ -85,10 +87,6 @@ public class Canvas extends JPanel implements KeyListener, PropertyChangeListene
        
     }
 
-    private void getJumpStrength() {
-        int engagement = Blackboard.getInstance().getEngagement();
-        this.jumpStrength = engagement/200.0;
-    }
 
     @Override
     public void keyReleased(KeyEvent e) {
@@ -113,8 +111,18 @@ public class Canvas extends JPanel implements KeyListener, PropertyChangeListene
         
     }
 
+
+
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        if ("Engagement".equals(evt.getPropertyName())) {
+//            System.out.println("Engagement changed from " + evt.getOldValue() + " to " + evt.getNewValue());
+            this.jumpStrength = ((int) evt.getNewValue())/200.0;
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+
     }
 }
