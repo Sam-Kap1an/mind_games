@@ -48,8 +48,11 @@ public class Canvas extends JPanel implements KeyListener, PropertyChangeListene
             }
             g.setColor(Color.WHITE);
 
-//            getJumpStrength();
-            this.jumpStrength -=5;
+
+            if (jumpStrength > 0)
+                this.jumpStrength -= 0.000007;
+            else if (jumpStrength < 0)
+                this.jumpStrength = 0;
 
             player.drawArrow(g, (long) (this.jumpStrength * 3000));
 
