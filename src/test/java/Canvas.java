@@ -50,7 +50,7 @@ public class Canvas extends JPanel implements KeyListener, PropertyChangeListene
 
 
             if (jumpStrength > 0)
-                this.jumpStrength -= 0.000007;
+                this.jumpStrength -= 0.000003;
             else if (jumpStrength < 0)
                 this.jumpStrength = 0;
 
