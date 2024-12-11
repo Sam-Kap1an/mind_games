@@ -83,9 +83,9 @@ public class MQTTClient implements Runnable, MqttCallback {
     }
 
     public static void main(String[] args) {
-        String broker = ""; //  broker URL
-        String clientId = "MQTTClient_1";
-        String topic = "";
+        String broker = "tcp://test.mosquitto.org:1883"; //  broker URL
+        String clientId = "TestPublisher";
+        String topic = "test/mind_games_508";
         
         MQTTClient client = new MQTTClient(broker, clientId, topic);
         Thread clientThread = new Thread(client);
