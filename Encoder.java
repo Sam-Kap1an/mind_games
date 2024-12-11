@@ -5,15 +5,15 @@ import java.beans.PropertyChangeListener;
 public class Encoder implements PropertyChangeListener{
 
 	private int engagement;
-	private String jump_height;
+	private int jump_height;
 
 
 	public Encoder() {
-		this.jump_height = "";
+		this.jump_height = 0;
 	}
 
 
-	public String getJump_height() {
+	public int getJump_height() {
 		return this.jump_height;
 	}
 
@@ -22,11 +22,11 @@ public class Encoder implements PropertyChangeListener{
     public void propertyChange(PropertyChangeEvent evt) {
         if ("jump_height".equals(evt.getPropertyName())) {
             jump_height = (int) evt.getNewValue();
-			setJump_height(Integer.toString((int) jump_height.getEngagement()));
+			setJump_height(jump_height);
         }
     }
 
-	private void setJump_height(String h) {
+	private void setJump_height(int h) {
 		this.jump_height = h;
 	}
 

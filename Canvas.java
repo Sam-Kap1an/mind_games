@@ -16,6 +16,7 @@ public class Canvas extends JPanel implements KeyListener, ActionListener {
     private Physics pe;
     private long prevTime;
     private boolean hasKeyBeenPressed = false;
+    private double jumpStrength = 0;
 
     public Canvas() {
 		setBackground(Color.BLACK);
@@ -43,9 +44,12 @@ public class Canvas extends JPanel implements KeyListener, ActionListener {
                 p.draw(g);
             }
             g.setColor(Color.WHITE);
-            if (this.hasKeyBeenPressed) {
-                player.drawArrow(g, System.currentTimeMillis()-this.prevTime);
-            }
+
+            getJumpStrength();
+            player.drawArrow(g, (long) (this.jumpStrength * 3000));
+
+
+
             g.setColor(Color.BLUE);
             g.fillRect(625, 500, 35, 5);
             repaint();
@@ -80,6 +84,11 @@ public class Canvas extends JPanel implements KeyListener, ActionListener {
        
     }
 
+    private void getJumpStrength() {
+        int engagement = Blackboard.getInstance().getEngagement();
+        this.jumpStrength = engagement/200.0;
+    }
+
     @Override
     public void keyReleased(KeyEvent e) {
         // TODO Auto-generated method stub
@@ -87,7 +96,8 @@ public class Canvas extends JPanel implements KeyListener, ActionListener {
             hasKeyBeenPressed = false;
             if (player.getVelX() == 0) {
                 long currentTime =  System.currentTimeMillis();
-                double hyp = Math.pow((currentTime-this.prevTime),1.5)/250000.0;
+//                double hyp = Math.pow((currentTime-this.prevTime),1.5)/250000.0;
+                double hyp = this.jumpStrength;
                 player.setVelX(hyp * .55);
                 player.setVelY(hyp * -.85);
             }

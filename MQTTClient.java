@@ -79,16 +79,7 @@ public class MQTTClient implements Runnable, MqttCallback {
 
     private void processMessage(String message) {
         logger.info("Processing message: {}", message);
+        Blackboard.getInstance().setEngagement(Integer.parseInt(message));
     
-    }
-
-    public static void main(String[] args) {
-        String broker = "tcp://test.mosquitto.org:1883"; //  broker URL
-        String clientId = "TestPublisher";
-        String topic = "test/mind_games_508";
-        
-        MQTTClient client = new MQTTClient(broker, clientId, topic);
-        Thread clientThread = new Thread(client);
-        clientThread.start();
     }
 }
