@@ -1,4 +1,4 @@
-
+import java.awt.*;
 import java.beans.PropertyChangeSupport;
 
 public class Blackboard extends PropertyChangeSupport {
