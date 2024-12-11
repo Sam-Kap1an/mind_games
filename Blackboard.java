@@ -1,5 +1,4 @@
 
-import java.awt.*;
 import java.beans.PropertyChangeSupport;
 
 public class Blackboard extends PropertyChangeSupport {
@@ -7,7 +6,7 @@ public class Blackboard extends PropertyChangeSupport {
 
 	private Blackboard() {
 		super(new Object());
-		engagement = new int(0);
+		engagement = 0;
 	}
 
 	public void setEngagement(int i) {
