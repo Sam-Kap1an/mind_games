@@ -4,30 +4,28 @@ import java.beans.PropertyChangeListener;
 
 public class Encoder implements PropertyChangeListener{
 
-	private int engagement;
-	private int jump_height;
+	private double jumpStrength;
 
 
 	public Encoder() {
-		this.jump_height = 0;
+		this.jumpStrength = 0;
 	}
 
 
-	public int getJump_height() {
-		return this.jump_height;
+	public double getJumpStrength() {
+		return this.jumpStrength;
 	}
 
 	
 	@Override
     public void propertyChange(PropertyChangeEvent evt) {
-        if ("jump_height".equals(evt.getPropertyName())) {
-            jump_height = (int) evt.getNewValue();
-			setJump_height(jump_height);
-        }
+        if ("Engagement".equals(evt.getPropertyName())) {
+			this.jumpStrength = ((int) evt.getNewValue())/200.0;
+		}
     }
 
-	private void setJump_height(int h) {
-		this.jump_height = h;
+	private void setJumpStrength(double jumpStrength) {
+		this.jumpStrength = jumpStrength;
 	}
 
 }

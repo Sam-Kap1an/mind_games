@@ -2,7 +2,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.List;
 
-public class Physics implements PropertyChangeListener{
+public class Physics{
     private Player player;
     private List<Platform> platforms;
     private final double GRAVITY = -0.00015;
@@ -31,10 +31,5 @@ public class Physics implements PropertyChangeListener{
         this.player.setY(this.player.getY()+this.player.getVelY());
     }
 
-    @Override
-    public void propertyChange(PropertyChangeEvent evt) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'propertyChange'");
-    }
     
 }
