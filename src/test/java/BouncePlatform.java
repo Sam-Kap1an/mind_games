@@ -2,7 +2,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public class BouncePlatform extends Platform {
-
     public BouncePlatform(int x, int y, int width, int height) {
         super(x, y, width, height);
     }
@@ -24,7 +23,7 @@ public class BouncePlatform extends Platform {
 
             if (overlapTop < overlapBottom) {
                 player.setY(y - playerHeight);
-                player.setVelY(-Math.abs(player.getVelY()) * 1.5); 
+                player.setVelY(-Math.abs(player.getVelY())); 
             } else {
                 player.setY(y + height + 1);
                 player.setVelY(0);
@@ -34,7 +33,7 @@ public class BouncePlatform extends Platform {
 
     @Override
     public void draw(Graphics g) {
-        g.setColor(Color.RED); 
+        g.setColor(Color.GREEN); 
         g.fillRect(x, y, width, height);
     }
 }
