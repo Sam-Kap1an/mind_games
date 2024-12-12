@@ -95,12 +95,9 @@ public class Canvas extends JPanel implements KeyListener, PropertyChangeListene
 
     @Override
     public void keyReleased(KeyEvent e) {
-        // TODO Auto-generated method stub
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             hasKeyBeenPressed = false;
             if (player.getVelX() == 0) {
-                long currentTime =  System.currentTimeMillis();
-//                double hyp = Math.pow((currentTime-this.prevTime),1.5)/250000.0;
                 double hyp = this.jumpStrength;
                 player.setVelX(hyp * .55);
                 player.setVelY(hyp * -.85);
