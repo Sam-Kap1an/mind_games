@@ -17,7 +17,6 @@ public class Canvas extends JPanel implements KeyListener, PropertyChangeListene
     Player player;
     List<Platform> platforms;
     private Physics pe;
-    private long prevTime;
     private boolean hasKeyBeenPressed = false;
     private double jumpStrength = 0;
 
@@ -27,8 +26,10 @@ public class Canvas extends JPanel implements KeyListener, PropertyChangeListene
         this.platforms = new ArrayList<Platform>();
         for (int i = 0; i < 6; i ++) {
             this.platforms.add(new Platform(i*125, 500, 35, 5));
-            // this.platforms.add(new Platform(i*125+75, 475, 35, 5));
+            
         }
+
+        this.platforms.add(new BouncePlatform(0*125+75, 475, 35, 5));
          //this.platforms.add(new Platform(300, 20, 5, 400));
         
         this.pe = new Physics(this.player, this.platforms);
@@ -79,7 +80,6 @@ public class Canvas extends JPanel implements KeyListener, PropertyChangeListene
             player.setY(300);
         }
         if ((e.getKeyCode() == KeyEvent.VK_SPACE) && (hasKeyBeenPressed == false)) {
-            this.prevTime = System.currentTimeMillis();
             hasKeyBeenPressed = true;
         }
         
