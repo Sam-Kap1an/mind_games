@@ -1,32 +1,30 @@
 import java.util.List;
 
 public class Physics{
-    private Player player;
-    private List<Platform> platforms;
+
     private final double GRAVITY = -0.00015;
 
-    public Physics(Player p, List<Platform> ps) {
-        this.player = p;
-        this.platforms = ps;
+    public Physics() {
+
     }
 
-    public void updatePhysics() {
+    public void updatePhysics(Player player, List<Platform> platforms) {
         double accX = 0;
         double accY = -1 * GRAVITY;
-        this.player.setVelY(this.player.getVelY()+accY);
-        this.player.setVelX(this.player.getVelX()+accX);
-        if (this.player.getY() > 550) {
+        player.setVelY(player.getVelY()+accY);
+        player.setVelX(player.getVelX()+accX);
+        if (player.getY() > 550) {
             player.setVelX(0);
             player.setVelY(0);
             player.setX(20);
             player.setY(300);
         } 
-        for (Platform p : this.platforms) {
+        for (Platform p : platforms) {
             p.handleCollision(player);
         }
         
-        this.player.setX(this.player.getX()+this.player.getVelX());
-        this.player.setY(this.player.getY()+this.player.getVelY());
+        player.setX(player.getX()+player.getVelX());
+        player.setY(player.getY()+player.getVelY());
     }
 
     
