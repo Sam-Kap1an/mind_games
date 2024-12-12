@@ -27,8 +27,8 @@ This repository contains information and resources for **Mind_Games**, a unique 
 1. Clone or download this repository to your local machine:
    ```bash
    git clone https://github.com/Sam-Kap1an/mind_games.git
-2. Run Main(), the terminal should listen for data coming directly from your Emotiv headset
-3. Alternative, double click the mind_games-1.0-SNAPSHOT.jar in the root directory.
+2. Double click the mind_games-1.0-SNAPSHOT.jar in the root directory to launch the game.
+3. Alternatively, run Main().
 
 
 ## Tutorial
