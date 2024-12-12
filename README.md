@@ -19,8 +19,10 @@ This repository contains information and resources for **Mind_Games**, a unique 
 4. Ensure your node graph looks like this: ![image](https://github.com/user-attachments/assets/6272cd54-def8-4e08-9e67-22a640aef005) 
 5. Configure MQTT Out Node: ![image](https://github.com/user-attachments/assets/b46c2d48-3497-4536-934e-2a283c063983)
 6. Deploy workflow
+7. This should publish live data through an MQTT broker
 
 ## Game Installation
 1. Clone or download this repository to your local machine:
    ```bash
    git clone https://github.com/Sam-Kap1an/mind_games.git
+2. Run Main(), the terminal should listen for data coming directly from your Emotiv headset
