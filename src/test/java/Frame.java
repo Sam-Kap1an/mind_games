@@ -7,7 +7,6 @@ import javax.swing.JMenuItem;
 public class Frame extends JFrame {
     
 	public Frame() {
-		setJMenuBar(createMenuBar());
 		setLayout(new GridLayout(1, 1));
         
 
@@ -18,17 +17,7 @@ public class Frame extends JFrame {
         this.addKeyListener(d);
 
 	}
-	
-	private JMenuBar createMenuBar() {
-		JMenuBar menuBar = new JMenuBar();
-		JMenu menu = new JMenu("File");
-		JMenuItem start = new JMenuItem("Start client");
-		JMenuItem stop = new JMenuItem("Stop client");
-		menu.add(start);
-		menu.add(stop);
-		menuBar.add(menu);
-		return menuBar;
-	}
+
 
 	
 }
