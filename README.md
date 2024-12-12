@@ -28,6 +28,7 @@ This repository contains information and resources for **Mind_Games**, a unique 
    ```bash
    git clone https://github.com/Sam-Kap1an/mind_games.git
 2. Run Main(), the terminal should listen for data coming directly from your Emotiv headset
+3. Alternative, double click the mind_games-1.0-SNAPSHOT.jar in the root directory.
 
 
 ## Tutorial
