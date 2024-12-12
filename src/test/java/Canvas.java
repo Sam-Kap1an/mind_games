@@ -121,7 +121,6 @@ public class Canvas extends JPanel implements KeyListener, PropertyChangeListene
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         if ("Engagement".equals(evt.getPropertyName())) {
-//            System.out.println("Engagement changed from " + evt.getOldValue() + " to " + evt.getNewValue());
             this.jumpStrength = ((int) evt.getNewValue())/200.0;
         }
     }
